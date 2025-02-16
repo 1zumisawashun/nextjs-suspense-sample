@@ -1,17 +1,9 @@
-"use client";
-
-import { use } from "react";
 import NextLink from "next/link";
 
 /**
- * MEMO: use APIを使った場合、エラーが発生しないパターン（公式のおすすめ）
+ * MEMO: SCの場合render as you fetchになっているか？
  */
-export default function TodoListPage({
-  todoPromise,
-}: {
-  todoPromise: Promise<any>;
-}) {
-  const todos = use(todoPromise);
+export default function TodoListPage({ todos }: { todos: any }) {
   console.log(`render TodoListPage`);
 
   return (

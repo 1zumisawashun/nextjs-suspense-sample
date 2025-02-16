@@ -1,17 +1,11 @@
 "use client";
 
-import { use } from "react";
 import NextLink from "next/link";
 
 /**
- * MEMO: use APIを使った場合、エラーが発生しないパターン（公式のおすすめ）
+ * MEMO: CCの場合render as you fetchになっているか？
  */
-export default function TodoListPage({
-  todoPromise,
-}: {
-  todoPromise: Promise<any>;
-}) {
-  const todos = use(todoPromise);
+export default function TodoListPage({ todos }: { todos: any }) {
   console.log(`render TodoListPage`);
 
   return (
@@ -23,7 +17,6 @@ export default function TodoListPage({
         <NextLink href="/sample4">Go to sample4</NextLink>
         <NextLink href="/sample5">Go to sample5</NextLink>
       </div>
-
       <table>
         {/* ...省略... */}
         <tbody>
