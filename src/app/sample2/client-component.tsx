@@ -11,8 +11,13 @@ import { getTodoList } from "../../lib/getTodoList";
  * @see https://it.react.dev/blog/2024/12/05/react-19#use-does-not-support-promises-created-in-render
  * React.cacheを使えば解決できると明言している記事があるがどうやらそうではないっぽい
  */
+
+/**
+ * MEMO: use APIを使った場合、エラーが発生するパターン
+ */
 export default function TodoListPage() {
   const todos = use(getTodoList());
+  console.log(`render TodoListPage`);
 
   // ↓!無限にレンダリングされる!
   return (
